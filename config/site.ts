@@ -10,7 +10,7 @@ export const siteConfig = {
     },
     {
       label: "Watch List",
-      href: "/docs",
+      href: "/watchlist",
     },
   ],
   navMenuItems: [

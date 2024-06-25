@@ -1,7 +1,7 @@
 "use client";
-import MovieCard from "@/components/MovieCard";
+import DataCard from "@/components/DataCard";
 import React, { useCallback, useEffect, useState } from "react";
-import MovieCardSkeleton from "@/components/MovieCardSkeleton";
+import DataCardSkeleton from "@/components/DataCardSkeleton";
 import { ButtonGroup } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import SearchBar from "@/components/SearchBar";
@@ -45,7 +45,7 @@ export default function Home() {
   };
 
   const renderPlaceholderCards = () =>
-    Array.from({ length: 10 }).map((_, i) => <MovieCardSkeleton key={i} />);
+    Array.from({ length: 10 }).map((_, i) => <DataCardSkeleton key={i} />);
 
   useEffect(() => {
     if (!searchQuery) {
@@ -104,8 +104,9 @@ export default function Home() {
           ? renderPlaceholderCards()
           : movies?.map(
               ({ id, title, releaseDate, posterSrc, backdropSrc }, i) => (
-                <MovieCard
+                <DataCard
                   key={i}
+                  isPressable
                   backdropSrc={backdropSrc}
                   height={400}
                   id={id}

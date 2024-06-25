@@ -90,6 +90,7 @@ export function formatMovie(movie: any): Movie {
     plotSummary: movie.overview,
     rating: movie.vote_average,
     country: movie.origin_country,
+    inWatchlist: movie.inWatchlist,
   };
 }
 
