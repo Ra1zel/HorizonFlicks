@@ -17,6 +17,7 @@ export type Movie = {
   runtime: number;
   plotSummary: string;
   rating: number;
+  inWatchlist: boolean;
   cast?: CastMember[];
 };
 

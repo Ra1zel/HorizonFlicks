@@ -1,12 +1,9 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-
 import { useRouter } from "next/navigation";
-import { MovieCardData } from "@/types";
 
 interface Props {
-  // movie: MovieCardData;
   id: number;
   primaryText: string;
   secondaryText: string;
@@ -14,9 +11,11 @@ interface Props {
   backdropSrc?: string;
   width: number;
   height: number;
+  isPressable?: boolean;
+  primaryButton?: ReactNode;
 }
 
-const MovieCard = ({
+const DataCard = ({
   id,
   primaryText,
   secondaryText,
@@ -24,14 +23,16 @@ const MovieCard = ({
   backdropSrc,
   width,
   height,
+  primaryButton,
+  isPressable = false,
 }: Props) => {
   const router = useRouter();
 
   return (
     <div>
       <Card
-        isPressable
         className={`h-[${height}px] w-[${width}px] rounded-none`}
+        isPressable={isPressable}
         shadow="sm"
         onPress={() => {
           router.push(`/details/${id}`);
@@ -60,11 +61,14 @@ const MovieCard = ({
         </CardBody>
         <CardFooter className="flex items-start flex-col text-small flex-auto justify-start">
           <h3 className="text-lg">{primaryText}</h3>
-          <p className="text-sm text-gray-800">{secondaryText}</p>
+          <div className="flex w-full items-center justify-between">
+            <p className="text-sm text-gray-800">{secondaryText}</p>
+            {primaryButton ?? null}
+          </div>
         </CardFooter>
       </Card>
     </div>
   );
 };
 
-export default MovieCard;
+export default DataCard;

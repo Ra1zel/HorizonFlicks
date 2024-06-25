@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "@nextui-org/input";
 import { Kbd } from "@nextui-org/kbd";
-import { SearchIcon } from "@/components/icons";
+import { SearchIcon } from "@/styles/icons";
 
 interface Props {
   searchQuery: string;

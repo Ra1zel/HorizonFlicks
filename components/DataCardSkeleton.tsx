@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "@nextui-org/react";
 import { Skeleton } from "@nextui-org/skeleton";
 
-const MovieCardSkeleton = () => {
+const DataCardSkeleton = () => {
   return (
     <Card className="w-[250px] h-[300px] space-y-5 p-4 rounded-none">
       <Skeleton className="rounded-none">
@@ -20,4 +20,4 @@ const MovieCardSkeleton = () => {
   );
 };
 
-export default MovieCardSkeleton;
+export default DataCardSkeleton;
