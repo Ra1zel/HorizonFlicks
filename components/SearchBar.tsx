@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { Input } from "@nextui-org/input";
 import { Kbd } from "@nextui-org/kbd";
 import { SearchIcon } from "@/styles/icons";
+import { debounce } from "@/utils/utils";
 
 interface Props {
-  searchQuery: string;
-  onSearchQueryChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearchQueryChange: (value: string) => void;
 }
 
-const SearchBar = ({ searchQuery, onSearchQueryChange }: Props) => {
+const SearchBar = ({ onSearchQueryChange }: Props) => {
+  const [value, setValue] = useState("");
+
+  const debouncedChangeHandler = useCallback(
+    debounce(onSearchQueryChange, 500),
+    [],
+  );
+
+  const handleValueChange = (value: string) => {
+    setValue(value);
+    debouncedChangeHandler(value);
+  };
+
   return (
     <Input
       aria-label="Search"
@@ -29,9 +41,9 @@ const SearchBar = ({ searchQuery, onSearchQueryChange }: Props) => {
         <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
       }
       type="search"
-      value={searchQuery}
+      value={value}
       variant="bordered"
-      onChange={onSearchQueryChange}
+      onChange={(event) => handleValueChange(event.target.value)}
     />
   );
 };

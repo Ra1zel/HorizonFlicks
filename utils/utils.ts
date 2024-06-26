@@ -124,3 +124,24 @@ export function convertMinutesToHoursAndMinutes(minutes: number) {
 
   return `${hours} hour${hours !== 1 ? "s" : ""} ${remainingMinutes} min${remainingMinutes !== 1 ? "s" : ""}`;
 }
+
+/**
+ *
+ * @param items - The array of items to transform into a 2D array.
+ * @param tuplesPerEntry - The number of elements per row.
+ * @return {Array<MovieCardData>[]} - The transformed 2D array.
+ */
+export function transformInto2DArray(
+  items: Array<MovieCardData>,
+  tuplesPerEntry: number,
+) {
+  const result: Array<MovieCardData>[] = [];
+
+  for (let i = 0; i < items.length; i = i + tuplesPerEntry) {
+    const currentSlice = items.slice(i, i + tuplesPerEntry);
+
+    result.push(currentSlice);
+  }
+
+  return result;
+}
