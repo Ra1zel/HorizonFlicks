@@ -24,13 +24,10 @@ const InfiniteImageViewer = ({
 }: InfiniteImageViewerProps) => {
   const { itemSize, itemsToDisplayPerRow } = useGetInfiniteImageViewParams();
 
-  const {
-    movies,
-    isEmptyList,
-    loadMoreItems,
-    getHasNextPage,
-    // isLoadingMovies,
-  } = useGetImages({ searchString, selectedFeed });
+  const { movies, isEmptyList, loadMoreItems, getHasNextPage } = useGetImages({
+    searchString,
+    selectedFeed,
+  });
 
   const movies2DArray = transformInto2DArray(movies, itemsToDisplayPerRow);
 
@@ -53,7 +50,7 @@ const InfiniteImageViewer = ({
             {rowImages.map((item) => (
               <div key={`${item.id}`} className="w-full m-2 max-w-[250px]">
                 <DataCard
-                  isPressable={true}
+                  isPressable
                   backdropSrc={item.backdropSrc}
                   height={400}
                   id={item.id}

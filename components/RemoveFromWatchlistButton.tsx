@@ -14,9 +14,12 @@ interface Props {
 const RemoveFromWatchlistButton = ({ movie }: Props) => {
   const handleOnButtonClick = async () => {
     try {
-      await watchlistAction({
-        ...movie,
-      });
+      await watchlistAction(
+        {
+          ...movie,
+        },
+        "/watchlist",
+      );
     } catch (error) {
       throw new Error("An error occurred. Operation could not be completed.");
     }

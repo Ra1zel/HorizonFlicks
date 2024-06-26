@@ -43,11 +43,10 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col">
             <Navbar />
-            <main className="w-full px-6 flex-grow">{children}</main>
+            <main className="w-full flex-grow">{children}</main>
           </div>
         </Providers>
       </body>
     </html>
   );
 }
-//mx-auto max-w-7xl

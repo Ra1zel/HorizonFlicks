@@ -3,12 +3,23 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "@/hooks/useMediaquery";
 
 const useGetScreenSize = () => {
-  const matchSmMobile = useMediaQuery("(max-width: 375px)");
-  const matchMobile = useMediaQuery("(max-width: 480px)");
-  const matchTablet = useMediaQuery("(max-width: 768px)");
-  const matchDesktop = useMediaQuery("(max-width: 1024px)");
-  const matchDesktopLg = useMediaQuery("(max-width: 1440px)");
-  const isLgScreenOrBigger = useMediaQuery("(min-width: 1440px)");
+  const matchSmMobile = useMediaQuery(
+    "(min-width: 0px) and (max-width: 599px)",
+  );
+  const matchMobile = useMediaQuery(
+    "(min-width: 600px) and (max-width: 899px)",
+  );
+  const matchTablet = useMediaQuery(
+    "(min-width: 900px) and (max-width: 1099px) ",
+  );
+  const matchDesktop = useMediaQuery(
+    "(min-width: 1100px) and (max-width: 1374px)",
+  );
+  const matchDesktopLg = useMediaQuery(
+    "(min-width: 1375px) and (max-width: 1560px)",
+  );
+
+  const isLgScreenOrBigger = useMediaQuery("(min-width: 1561px)");
 
   return {
     isSmallMobileView: matchSmMobile,
@@ -35,7 +46,7 @@ export const useGetInfiniteImageViewParams = () => {
 
   useEffect(() => {
     if (isSmallMobileView) {
-      setItemsToDisplayPerRow(2);
+      setItemsToDisplayPerRow(1);
       setItemSize(400);
     }
     if (isMobileView) {
@@ -47,11 +58,11 @@ export const useGetInfiniteImageViewParams = () => {
       setItemSize(400);
     }
     if (isDesktopView) {
-      setItemsToDisplayPerRow(3);
+      setItemsToDisplayPerRow(4);
       setItemSize(400);
     }
     if (isLargeDesktopView) {
-      setItemsToDisplayPerRow(4);
+      setItemsToDisplayPerRow(5);
       setItemSize(400);
     }
     if (isLgScreenOrBigger) {

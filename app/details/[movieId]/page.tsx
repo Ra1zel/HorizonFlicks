@@ -16,6 +16,7 @@ import { Divider } from "@nextui-org/react";
 import prisma from "@/lib/prisma/client";
 import { NextResponse } from "next/server";
 
+//TODO : create mechanism for global error handling.
 const generateUrl = (movieId: number) =>
   `https://api.themoviedb.org/3/movie/${movieId}?language=en-US&page=1&api_key=${process.env.NEXT_PRIVATE_MOVIE_API_KEY}`;
 
@@ -92,7 +93,7 @@ export async function Page({ params }: { params: { [key: string]: number } }) {
   );
 
   return (
-    <div>
+    <div className="mx-auto max-w-7xl">
       <Card className="rounded-none">
         <div className="flex gap-10">
           <div>

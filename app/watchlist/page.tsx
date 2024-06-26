@@ -13,7 +13,7 @@ export default async function Page() {
   const watchlistMovies = await fetchWatchlistMovies();
 
   return (
-    <div>
+    <div className="mx-auto max-w-7xl">
       <h3 className="text-4xl text-black">Your Watchlist</h3>
       <Divider />
       <div className="flex flex-wrap py-5 gap-10">

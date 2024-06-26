@@ -5,8 +5,7 @@ import { SavedMovie } from ".prisma/client";
 import prisma from "@/lib/prisma/client";
 import { redirect } from "next/navigation";
 
-export async function watchlistAction(movie: SavedMovie) {
-  let createdNewRecord = false;
+export async function watchlistAction(movie: SavedMovie, redirectPath: string) {
   try {
     // Check if the movie exists in the table
     const existingMovie = await prisma.savedMovie.findUnique({
@@ -29,11 +28,10 @@ export async function watchlistAction(movie: SavedMovie) {
           ...movie,
         },
       });
-      createdNewRecord = true;
     }
   } catch (error) {
     return { error: `${error}` };
   }
 
-  createdNewRecord ? redirect(`/details/${movie.id}`) : redirect(`/watchlist`);
+  redirect(redirectPath);
 }

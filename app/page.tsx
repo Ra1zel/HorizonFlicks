@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import DataCardSkeleton from "@/components/DataCardSkeleton";
+import React, { useRef, useState } from "react";
 import { ButtonGroup } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import SearchBar from "@/components/SearchBar";
@@ -17,50 +16,26 @@ export default function Home() {
   const [selectedFeed, setSelectedFeed] = useState<FEED>(FEED.NOW_PLAYING);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const myRef = useRef<HTMLBodyElement | null>(null);
   const infiniteImageViewerContainerRef = useRef<HTMLDivElement | null>(null);
 
   const onSearchQueryChange = (searchString: string) => {
     setSearchQuery(searchString);
   };
-
-  // useEffect(() => {
-  //   if (infiniteImageViewerContainerRef.current) {
-  //     infiniteImageViewerContainerRef.current.addEventListener(
-  //       "wheel",
-  //       (event) => {
-  //           // Check if parent can still be scrolled
-  //           const parentCanScroll =
-  //             myRef.current.scrollHeight >= myRef.current.clientHeight;
-  //           // parentContainerRef.scrollTop + parentContainerRef. <
-  //           // parentContainerRef.scrollHeight;
-  //
-  //           if (parentCanScroll) {
-  //             console.log("parent can scroll");
-  //             // Prevent child from scrolling
-  //             event.preventDefault();
-  //             // Scroll the parent instead
-  //             myRef.current.scrollTop += event.deltaY;
-  //             window.scrollTo({ top: 200, behavior: "smooth" });
-  //           }
-  //         }
-  //
-  //         console.log("scrollTop is: ", event.deltaY, myRef.current?.scrollTop);
-  //       },
-  //       { passive: false },
-  //     );
-  //   }
-  // }, [infiniteImageViewerContainerRef.current]);
-
+  //TODO: react query ?
+  //TODO: use .prettierrcJSON
   return (
-    <div className="h-full  border-2 border-solid border-pink-500">
-      <section className=" border-solid border-2 border-red-900 flex flex-col justify-start h-full relative flex-grow md:pt-10 md:pb-5">
+    <div className="h-full no-scrollbar">
+      <section className="flex flex-col  justify-start h-full relative flex-grow px-3 md:pt-10 md:pb-5">
         <SearchBar onSearchQueryChange={onSearchQueryChange} />
+        {/*
+        TODO: Make this is a drop down on small screens.
+        */}
         <ButtonGroup
           className="mt-4 flex flex-grow justify-center"
           radius="none"
           variant="shadow"
         >
+          {/*TODO: This should be rendered using a loop*/}
           <div className="flex flex-auto max-w-[750px]">
             <Button
               color={selectedFeed === FEED.NOW_PLAYING ? "primary" : "default"}
@@ -89,9 +64,10 @@ export default function Home() {
           </div>
         </ButtonGroup>
       </section>
+      {/*TODO use tailwind custom utility classes*/}
       <div
         ref={infiniteImageViewerContainerRef}
-        className="h-[100vh] w-[100vw] -ml-12 p-6 border-2 border-orange-500 border-solid"
+        className="h-screen p-6 no-scrollbar"
       >
         <InfiniteImageViewer
           searchString={searchQuery}

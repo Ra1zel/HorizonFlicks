@@ -5,6 +5,7 @@ import { MovieCardData } from "@/types";
 import { formatMoviesCardData } from "@/utils/utils";
 import { FEED } from "@/app/page";
 
+//TODO: move to separete file
 const fetchMoviesFromSearchQuery = async (
   searchString: string,
   pageNumber: number,

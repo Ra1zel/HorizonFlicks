@@ -29,11 +29,6 @@ const SearchBar = ({ onSearchQueryChange }: Props) => {
         input: "text-sm border-0",
         mainWrapper: "flex flex-row justify-center",
       }}
-      endContent={
-        <Kbd className="hidden lg:inline-block rounded-none" keys={["command"]}>
-          K
-        </Kbd>
-      }
       labelPlacement="outside"
       placeholder="Search for movies..."
       size="lg"
