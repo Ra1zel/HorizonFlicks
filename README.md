@@ -1,53 +1,20 @@
-# Next.js & NextUI Template
+# HorizonFlicks
 
-This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
+## Description
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
+Demo application built as a take-home assignment. Has the following features:
 
-## Technologies Used
+- Movie search with infinite virtualized scroll (using windowing).
+- Default movie feeds based on different categories with infinite virtualized scroll (using windowing).
+- Movie Details page to view movie details and cast.
+- Watchlist page - users can add or remove movies from watchlist.
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+## Table of Contents
 
-## How to Use
+- [Installation](#installation)
 
-### Use the template with create-next-app
+## Installation
 
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
-
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
-```bash
-npm install
-```
-
-### Run the development server
-
-```bash
-npm run dev
-```
-
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@nextui-org/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+1. clone the repository to your local machine.
+2. add .env file provided in email.
+3. start the application using `npm run dev` command.
