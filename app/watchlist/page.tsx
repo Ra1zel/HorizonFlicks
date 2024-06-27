@@ -1,9 +1,9 @@
 import React from "react";
 import { Divider } from "@nextui-org/react";
 
-import prisma from "@/lib/prisma/client";
-import DataCard from "@/components/DataCard";
-import RemoveFromWatchlistButton from "@/components/RemoveFromWatchlistButton";
+import prisma from "@/app/_lib/prisma/client";
+import DataCard from "@/app/_components/DataCard";
+import RemoveFromWatchlistButton from "@/app/_components/RemoveFromWatchlistButton";
 
 export async function fetchWatchlistMovies() {
   return prisma.savedMovie.findMany();
@@ -13,10 +13,10 @@ export default async function Page() {
   const watchlistMovies = await fetchWatchlistMovies();
 
   return (
-    <div>
-      <h3 className="text-4xl text-black">Your Watchlist</h3>
+    <div className='mx-auto max-w-7xl px-6'>
+      <h3 className='text-4xl text-black'>Your Watchlist</h3>
       <Divider />
-      <div className="flex flex-wrap py-5 gap-10">
+      <div className='flex flex-wrap justify-center lg:justify-normal py-5 gap-10'>
         {watchlistMovies.length !== 0 ? (
           watchlistMovies.map((movie) => (
             <DataCard
@@ -32,7 +32,7 @@ export default async function Page() {
             />
           ))
         ) : (
-          <div className="flex w-full mt-12 justify-center  text-2xl dark:text-white text-gray-700">
+          <div className='flex w-full mt-12 justify-center  text-2xl dark:text-white text-gray-700'>
             Your watch list is empty
           </div>
         )}

@@ -13,13 +13,13 @@ const Poster = ({ posterPath }: Props) => {
     <div>
       <Image
         alt={posterPath}
-        className="rounded-none object-contain object-top backdrop-blur-sm h-[500px]"
+        className='rounded-none object-contain object-top backdrop-blur-sm h-full'
         classNames={{
-          wrapper: "rounded-none  min-w-[335px] w-auto",
+          wrapper: "rounded-none   w-auto min-w-[200px] sm:min-w-[335px]",
         }}
-        id="movie-details-poster"
-        radius="lg"
-        shadow="sm"
+        id='movie-details-poster'
+        radius='lg'
+        shadow='sm'
         src={IMAGE_BASE_URL + posterPath}
       />
     </div>

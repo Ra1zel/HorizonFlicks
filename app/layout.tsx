@@ -1,11 +1,12 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
+
 import { Providers } from "./providers";
 
-import { siteConfig } from "@/config/site";
-import { lato } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
+import { siteConfig } from "@/app/_config/site";
+import { lato } from "@/app/_config/fonts";
+import { Navbar } from "@/app/_components/navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -31,20 +32,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning className={`${lato.className}`} lang="en">
+    <html suppressHydrationWarning className={`${lato.className}`} lang='en'>
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
+          "bg-background font-sans overflow-y-visible antialiased",
           lato.className,
         )}
+        id='main-container'
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col">
+          <div className='relative flex flex-col'>
             <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
+            <main className='w-full flex-grow'>{children}</main>
           </div>
         </Providers>
       </body>

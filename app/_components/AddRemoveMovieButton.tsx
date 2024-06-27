@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import { Button } from "@nextui-org/button";
 import { HeartFilledIcon } from "@/styles/icons";
-import { watchlistAction } from "@/actions/watchlist";
+import { watchlistAction } from "@/app/_actions/watchlist";
 import { Movie } from "@/types";
-import { redirect } from "next/navigation";
 
 interface Props {
   movie: Movie;
@@ -15,13 +14,16 @@ const AddRemoveMovieButton = ({ className, movie }: Props) => {
   const [active, setActive] = useState(movie.inWatchlist);
 
   const handleOnButtonClick = async () => {
-    await watchlistAction({
-      id: movie.id,
-      title: movie.title,
-      posterSrc: movie.posterSrc,
-      backdropSrc: movie.backdropSrc,
-      releaseDate: movie.releaseDate,
-    });
+    await watchlistAction(
+      {
+        id: movie.id,
+        title: movie.title,
+        posterSrc: movie.posterSrc,
+        backdropSrc: movie.backdropSrc,
+        releaseDate: movie.releaseDate,
+      },
+      `/details/${movie.id}`,
+    );
     setActive((prevState) => !prevState);
   };
 

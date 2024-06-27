@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 
-import Button from "@/atoms/Button";
-import { watchlistAction } from "@/actions/watchlist";
+import Button from "@/app/_nextUI/Button";
+import { watchlistAction } from "@/app/_actions/watchlist";
 import { TrashOutlineIcon } from "@/styles/icons";
 import { MovieCardData } from "@/types";
-import { redirect } from "next/navigation";
 
 interface Props {
   movie: MovieCardData;
@@ -14,9 +13,12 @@ interface Props {
 const RemoveFromWatchlistButton = ({ movie }: Props) => {
   const handleOnButtonClick = async () => {
     try {
-      await watchlistAction({
-        ...movie,
-      });
+      await watchlistAction(
+        {
+          ...movie,
+        },
+        "/watchlist",
+      );
     } catch (error) {
       throw new Error("An error occurred. Operation could not be completed.");
     }
@@ -25,10 +27,10 @@ const RemoveFromWatchlistButton = ({ movie }: Props) => {
   return (
     <Button
       isIconOnly
-      className="rounded-none"
-      color="danger"
-      size="sm"
-      variant="solid"
+      className='rounded-none'
+      color='danger'
+      size='sm'
+      variant='solid'
       onClick={handleOnButtonClick}
     >
       <TrashOutlineIcon size={20} />

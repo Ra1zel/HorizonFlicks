@@ -9,8 +9,8 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
+import { siteConfig } from "@/app/_config/site";
+import { ThemeSwitch } from "@/app/_components/theme-switch";
 
 import { Logo } from "@/styles/icons";
 
@@ -42,9 +42,8 @@ export const Navbar = () => {
         </ul>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+      <NavbarContent className="basis-1 pl-4" justify="end">
         <ThemeSwitch />
-        <NavbarMenuToggle />
       </NavbarContent>
     </NextUINavbar>
   );
