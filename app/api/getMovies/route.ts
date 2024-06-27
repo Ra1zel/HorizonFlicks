@@ -1,7 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
+import { TMDB_BASE_URL } from "@/constants";
 
 const generateUrl = (feedCategory: string, pageNumber: string) =>
-  `https://api.themoviedb.org/3/movie/${feedCategory}?language=en-US&page=${pageNumber}&api_key=${process.env.NEXT_PRIVATE_MOVIE_API_KEY}`;
+  `${TMDB_BASE_URL}/movie/${feedCategory}?language=en-US&page=${pageNumber}&api_key=${process.env.NEXT_PRIVATE_MOVIE_API_KEY}`;
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
