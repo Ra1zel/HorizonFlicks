@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useMediaQuery } from "@/hooks/useMediaquery";
+import { useMediaQuery } from "@/app/_hooks/useMediaquery";
 
 const useGetScreenSize = () => {
   const matchSmMobile = useMediaQuery(

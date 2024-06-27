@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Input } from "@nextui-org/input";
 import { Kbd } from "@nextui-org/kbd";
 import { SearchIcon } from "@/styles/icons";
-import { debounce } from "@/utils/utils";
+import { debounce } from "@/app/_utils/utils";
 
 interface Props {
   onSearchQueryChange: (value: string) => void;

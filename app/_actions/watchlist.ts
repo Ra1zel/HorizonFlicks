@@ -1,9 +1,9 @@
 "use server";
 
 import { SavedMovie } from ".prisma/client";
-
-import prisma from "@/lib/prisma/client";
 import { redirect } from "next/navigation";
+
+import prisma from "@/app/_lib/prisma/client";
 
 export async function watchlistAction(movie: SavedMovie, redirectPath: string) {
   try {
