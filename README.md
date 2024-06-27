@@ -16,5 +16,6 @@ Demo application built as a take-home assignment. Has the following features:
 ## Installation
 
 1. clone the repository to your local machine.
-2. add .env file provided in email.
-3. start the application using `npm run dev` command.
+3. add .env file provided in email.
+4. run `npm i` to get all required packages.
+5. start the application using `npm run dev` command.
