@@ -13,6 +13,7 @@ interface Props {
   height: number;
   isPressable?: boolean;
   primaryButton?: ReactNode;
+  placeholderImage?: string;
 }
 
 const DataCard = memo(
@@ -25,6 +26,7 @@ const DataCard = memo(
     width,
     height,
     primaryButton,
+    placeholderImage,
     isPressable = false,
   }: Props) => {
     const router = useRouter();
@@ -49,7 +51,7 @@ const DataCard = memo(
               <img
                 alt={primaryText}
                 className={`w-full rounded-none  object-contain object-top backdrop-blur-sm h-[${height - 100}px]`}
-                src={posterSrc ? posterSrc : "/userAvatar.png"}
+                src={posterSrc ? posterSrc : placeholderImage}
                 width='100%'
               />
             </div>

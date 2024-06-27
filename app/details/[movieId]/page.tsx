@@ -14,7 +14,11 @@ import AddRemoveMovieButton from "@/app/_components/AddRemoveMovieButton";
 import { getMovieById } from "@/app/_api/fetchMovieById";
 import { getMovieCrew } from "@/app/_api/fetchMovieCrew";
 
-export async function Page({ params }: { params: { [key: string]: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { [key: string]: string };
+}) {
   const movieId = params.movieId;
 
   //Initiate the requests in parallel
@@ -92,6 +96,7 @@ export async function Page({ params }: { params: { [key: string]: string } }) {
               primaryText={name}
               secondaryText={character}
               width={200}
+              placeholderImage='/userAvatar.png'
             />
           ))}
         </div>
@@ -99,5 +104,3 @@ export async function Page({ params }: { params: { [key: string]: string } }) {
     </div>
   );
 }
-
-export default Page;

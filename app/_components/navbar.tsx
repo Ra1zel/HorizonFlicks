@@ -1,7 +1,6 @@
 import {
   Navbar as NextUINavbar,
   NavbarContent,
-  NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
 } from "@nextui-org/navbar";
@@ -9,22 +8,21 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { siteConfig } from "@/app/_config/site";
 import { ThemeSwitch } from "@/app/_components/theme-switch";
-
+import { siteConfig } from "@/app/_config/site";
 import { Logo } from "@/styles/icons";
 
 export const Navbar = () => {
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
+    <NextUINavbar maxWidth='xl' position='sticky'>
+      <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
+        <NavbarBrand as='li' className='gap-3 max-w-fit'>
+          <NextLink className='flex justify-start items-center gap-1' href='/'>
             <Logo />
-            <p className="font-bold text-inherit">Horizon Flicks</p>
+            <p className='font-bold text-inherit'>Horizon Flicks</p>
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className='hidden lg:flex gap-4 justify-start ml-2'>
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
@@ -32,7 +30,7 @@ export const Navbar = () => {
                   linkStyles({ color: "foreground" }),
                   "data-[active=true]:text-primary data-[active=true]:font-medium",
                 )}
-                color="foreground"
+                color='foreground'
                 href={item.href}
               >
                 {item.label}
@@ -42,7 +40,7 @@ export const Navbar = () => {
         </ul>
       </NavbarContent>
 
-      <NavbarContent className="basis-1 pl-4" justify="end">
+      <NavbarContent className='basis-1 pl-4' justify='end'>
         <ThemeSwitch />
       </NavbarContent>
     </NextUINavbar>

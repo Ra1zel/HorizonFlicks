@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/button";
 import dynamic from "next/dynamic";
 
 import SearchBar from "@/app/_components/SearchBar";
+import { FEED } from "@/types";
 
 const InfiniteImageViewer = dynamic(
   () => import("@/app/_components/InfiniteImageViewer"),
@@ -53,13 +54,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
-
-export enum FEED {
-  NOW_PLAYING = "now_playing",
-  POPULAR = "popular",
-  TOP_RATED = "top_rated",
-  UPCOMING = "upcoming",
 }
 
 const feedButtonsConfig = [

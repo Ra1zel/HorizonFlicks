@@ -1,13 +1,9 @@
 import React from "react";
 import { Divider } from "@nextui-org/react";
 
-import prisma from "@/app/_lib/prisma/client";
 import DataCard from "@/app/_components/DataCard";
 import RemoveFromWatchlistButton from "@/app/_components/RemoveFromWatchlistButton";
-
-export async function fetchWatchlistMovies() {
-  return prisma.savedMovie.findMany();
-}
+import { fetchWatchlistMovies } from "@/app/_api/fetchWatchlistMovies";
 
 export default async function Page() {
   const watchlistMovies = await fetchWatchlistMovies();
@@ -24,6 +20,7 @@ export default async function Page() {
               backdropSrc={movie.backdropSrc}
               height={400}
               id={movie.id}
+              placeholderImage={"/movieplaceholder.png"}
               posterSrc={movie.posterSrc}
               primaryButton={<RemoveFromWatchlistButton movie={movie} />}
               primaryText={movie.title}

@@ -1,4 +1,4 @@
-import { FEED } from "@/app/page";
+import { FEED } from "@/types";
 import { formatMoviesCardData } from "@/app/_utils/utils";
 
 export const fetchMovieFeeds = async (

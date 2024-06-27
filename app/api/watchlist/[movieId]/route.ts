@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import prisma from "@/app/_lib/prisma/client";
 
-export async function GET(params: { movieId: number }) {
+export async function GET(req: NextRequest, params: { movieId: number }) {
   const { movieId } = params;
 
   try {

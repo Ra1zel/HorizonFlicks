@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 import { MovieCardData } from "@/types";
-import { FEED } from "@/app/page";
+import { FEED } from "@/types";
 import { fetchMoviesFromSearchQuery } from "@/app/_api/fetchMoviesFromSearchQuery";
 import { fetchMovieFeeds } from "@/app/_api/fetchMovieFeed";
 

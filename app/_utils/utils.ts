@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns";
+
 import { CastMember, Movie, MovieCardData, PosterSize } from "@/types";
 import {
   BACK_DROP_BASE_URL,
@@ -134,7 +135,7 @@ export function convertMinutesToHoursAndMinutes(minutes: number) {
 export function transformInto2DArray(
   items: Array<MovieCardData>,
   tuplesPerEntry: number,
-) {
+): MovieCardData[][] {
   const result: Array<MovieCardData>[] = [];
 
   for (let i = 0; i < items.length; i = i + tuplesPerEntry) {

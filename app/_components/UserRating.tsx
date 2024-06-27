@@ -8,20 +8,20 @@ interface Props {
 
 const UserRating = ({ userRating }: Props) => {
   return (
-    <div className="flex gap-2 items-center mt-3">
+    <div className='flex gap-2 items-center mt-3'>
       <CircularProgress
         classNames={{
           svg: "w-20 h-20 drop-shadow-md",
           value: "text-lg",
         }}
-        color="success"
+        color='success'
         formatOptions={{ style: "percent" }}
         showValueLabel={true}
-        size="lg"
+        size='lg'
         strokeWidth={4}
         value={Math.round((userRating / 10) * 100)}
       />
-      <p className="text-lg">User Score</p>
+      <p className='text-lg'>User Score</p>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import ImageViewerEmptyState from "./InfiniteViewerEmptyState";
 
 import { useGetInfiniteImageViewParams } from "@/app/_hooks/useGetInfiniteImageViewerParams";
 import { useGetMovies } from "@/app/_hooks/useGetMovies";
-import { FEED } from "@/app/page";
+import { FEED } from "@/types";
 import { transformInto2DArray } from "@/app/_utils/utils";
 import DataCard from "@/app/_components/DataCard";
 
@@ -38,22 +38,23 @@ const InfiniteImageViewer = ({
       if (!rowImages)
         return (
           <div style={style}>
-            <div className="items-center flex justify-center relative top-1/2 transform -translate-y-1/2">
-              <CircularProgress aria-label="Loading..." size="lg" />
+            <div className='items-center flex justify-center relative top-1/2 transform -translate-y-1/2'>
+              <CircularProgress aria-label='Loading...' size='lg' />
             </div>
           </div>
         );
 
       return (
         <div style={style}>
-          <div className="my-1 flex justify-center w-full">
+          <div className='my-1 flex justify-center w-full'>
             {rowImages.map((item) => (
-              <div key={`${item.id}`} className="w-full m-2 max-w-[250px]">
+              <div key={`${item.id}`} className='w-full m-2 max-w-[250px]'>
                 <DataCard
                   isPressable
                   backdropSrc={item.backdropSrc}
                   height={400}
                   id={item.id}
+                  placeholderImage={"/movieplaceholder.png"}
                   posterSrc={item.posterSrc}
                   primaryText={item.title}
                   secondaryText={item.releaseDate}

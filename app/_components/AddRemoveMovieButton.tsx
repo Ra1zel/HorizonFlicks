@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@nextui-org/button";
+
 import { HeartFilledIcon } from "@/styles/icons";
 import { watchlistAction } from "@/app/_actions/watchlist";
 import { Movie } from "@/types";
@@ -34,14 +35,14 @@ const AddRemoveMovieButton = ({ className, movie }: Props) => {
     <Button
       disableRipple
       className={className}
-      color="secondary"
+      color='secondary'
       startContent={
         <HeartFilledIcon
           fill={active ? "rgba(255,50,50,0.93)" : "rgba(255,255,255,0.93)"}
           size={20}
         />
       }
-      variant="solid"
+      variant='solid'
       onClick={handleOnButtonClick}
     >
       {renderButtonText()}

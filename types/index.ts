@@ -28,18 +28,12 @@ export type CastMember = {
   profileSrc: string;
 };
 
-// adult: false,
-//   gender: 1,
-//   id: 4732043,
-//   known_for_department: 'Acting',
-//   name: 'Anastasia Miller',
-//   original_name: 'Anastasia Miller',
-//   popularity: 0.173,
-//   profile_path: null,
-//   cast_id: 65,
-//   character: 'Feral Human #6',
-//   credit_id: '664fb122a647645f51ec1f32',
-//   order: 26
+export enum FEED {
+  NOW_PLAYING = "now_playing",
+  POPULAR = "popular",
+  TOP_RATED = "top_rated",
+  UPCOMING = "upcoming",
+}
 
 export type MovieCardData = Pick<
   Movie,
