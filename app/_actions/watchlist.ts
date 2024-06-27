@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import prisma from "@/app/_lib/prisma/client";
 
 export async function watchlistAction(movie: SavedMovie, redirectPath: string) {
+  "use server";
   try {
     // Check if the movie exists in the table
     const existingMovie = await prisma.savedMovie.findUnique({
