@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma/client";
+import prisma from "@/app/_lib/prisma/client";
 import { formatMovie } from "@/app/_utils/utils";
 import { TMDB_BASE_URL } from "@/constants";
 

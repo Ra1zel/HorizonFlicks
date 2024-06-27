@@ -1,7 +1,7 @@
 import React from "react";
 import { Divider } from "@nextui-org/react";
 
-import prisma from "@/lib/prisma/client";
+import prisma from "@/app/_lib/prisma/client";
 import DataCard from "@/app/_components/DataCard";
 import RemoveFromWatchlistButton from "@/app/_components/RemoveFromWatchlistButton";
 
