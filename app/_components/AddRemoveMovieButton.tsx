@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@nextui-org/button";
 import { HeartFilledIcon } from "@/styles/icons";
-import { watchlistAction } from "@/actions/watchlist";
+import { watchlistAction } from "@/app/_actions/watchlist";
 import { Movie } from "@/types";
 
 interface Props {

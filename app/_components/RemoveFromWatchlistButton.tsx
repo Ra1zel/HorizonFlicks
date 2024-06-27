@@ -2,7 +2,7 @@
 import React from "react";
 
 import Button from "@/atoms/Button";
-import { watchlistAction } from "@/actions/watchlist";
+import { watchlistAction } from "@/app/_actions/watchlist";
 import { TrashOutlineIcon } from "@/styles/icons";
 import { MovieCardData } from "@/types";
 import { redirect } from "next/navigation";

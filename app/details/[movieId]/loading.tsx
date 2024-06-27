@@ -1,6 +1,6 @@
 import React from "react";
 import { Skeleton } from "@nextui-org/skeleton";
-import Card from "@/components/Card";
+import Card from "@/app/_components/Card";
 
 export default function loading() {
   return (

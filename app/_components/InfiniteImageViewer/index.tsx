@@ -7,11 +7,11 @@ import { CircularProgress } from "@nextui-org/react";
 import VirtualizedList from "./VirtualizedList";
 import ImageViewerEmptyState from "./InfiniteViewerEmptyState";
 
-import { useGetInfiniteImageViewParams } from "@/hooks/useGetInfiniteImageViewerParams";
-import { useGetImages } from "@/hooks/useGetImages";
+import { useGetInfiniteImageViewParams } from "@/app/_hooks/useGetInfiniteImageViewerParams";
+import { useGetMovies } from "@/app/_hooks/useGetMovies";
 import { FEED } from "@/app/page";
-import { transformInto2DArray } from "@/utils/utils";
-import DataCard from "@/components/DataCard";
+import { transformInto2DArray } from "@/app/_utils/utils";
+import DataCard from "@/app/_components/DataCard";
 
 interface InfiniteImageViewerProps {
   searchString: string;
@@ -24,7 +24,7 @@ const InfiniteImageViewer = ({
 }: InfiniteImageViewerProps) => {
   const { itemSize, itemsToDisplayPerRow } = useGetInfiniteImageViewParams();
 
-  const { movies, isEmptyList, loadMoreItems, getHasNextPage } = useGetImages({
+  const { movies, isEmptyList, loadMoreItems, getHasNextPage } = useGetMovies({
     searchString,
     selectedFeed,
   });
